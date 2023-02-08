@@ -4,16 +4,14 @@
 
 .header {
   /* Display & Box Model */
-  height: 80vh;
+  height: 90vh;
 
   /* Other */
   background-color: var(--color-black);
-  background-image: radial-gradient(transparent, var(--color-black)),
-    url(../img/header.jpg);
-  background-position: top;
+  background-image: linear-gradient(to bottom, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 0.3) 50%, rgba(#000, 1) 100%), url(../img/header.jpg);
+  background-position: bottom;
   background-repeat: no-repeat;
-  // background-size: cover;
-  filter: hue(120deg);
+  background-size: cover;
 
   &__nav {
     /* Display & Box Model */
@@ -21,27 +19,116 @@
     width: 100%;
 
     /* Positioning */
+    align-items: center;
+    gap: 5vw;
+    justify-content: center;
     position: fixed;
 
     /* Positioning */
-    padding: 2rem 3rem;
+    padding: 1rem 1rem;
+    font-size: 1.5rem;
 
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
       /* Other */
       backdrop-filter: blur(10px);
-      background-image: linear-gradient(
-        to bottom,
-        var(--color-black) 10%,
-        transparent
-      );
+      background-image: linear-gradient(to bottom, var(--color-black) 10%, transparent);
+    }
+
+    &-icon {
+      /* Positioning */
+      margin-top: 4rem;
+      position: relative;
+
+      &::before,
+      &::after {
+        /* Display & Box Model */
+        content: "";
+
+        /* Positioning */
+        left: 0;
+        position: absolute;
+        transition: all 0.2s;
+      }
+
+      &,
+      &::before,
+      &::after {
+        /* Display & Box Model */
+        display: inline-block;
+
+        /* Positioning */
+        height: 2px;
+        width: 3rem;
+
+        /* Other */
+        background-color: white;
+      }
+
+      &::before {
+        /* Display & Box Model */
+        height: 2px;
+        width: 1rem;
+
+        /* Positioning */
+        top: -1.6rem;
+        left: 100%;
+        translate: -100% 0;
+      }
+
+      &::after {
+        /* Display & Box Model */
+        height: 2px;
+        width: 2rem;
+
+        /* Positioning */
+        top: -0.8rem;
+        left: 100%;
+        translate: -100% 0;
+      }
     }
 
     &-logo {
       /* Display & Box Model */
-      height: 6rem;
+      height: 4rem;
 
       /* Other */
       filter: brightness(500%);
     }
+
+    &-list {
+      /* Display & Box Model */
+      display: flex;
+
+      /* Positioning */
+      gap: 3.5vw;
+
+      li {
+        /* Other */
+        list-style: none;
+      }
+      li a {
+        &:link {
+          @extend .default_link_style;
+        }
+        &:visited {
+          @extend .default_link_style;
+        }
+        &:hover {
+        }
+        &:active {
+        }
+      }
+    }
+
+    /*
+    ==========================================================================
+    MOTION - b
+    ==========================================================================
+    */
+    /*
+    ==========================================================================
+    MOTION - e
+    ==========================================================================
+    */
   }
 }
