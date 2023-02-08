@@ -1,0 +1,28 @@
+/*
+* Add vanilla CSS variables.
+*
+* It is possible to apply logic to these
+* different from SASS ones.
+*/
+
+:root {
+  /* Colors */
+
+  --color-primary-300: #485460;
+  --color-primary-400: #353b48;
+  --color-primary-700: #1e272e;
+
+  --color-secondary-300: #ecf0f1;
+  --color-secondary-400: #dfe6e9;
+
+  --color-affluent-300: #3498db;
+  --color-affluent-400: #2980b9;
+
+  --color-black: #000;
+
+  /* Sizes */
+
+  --font-size-300: 1.6rem;
+  --font-size-400: 2rem;
+  --font-size-700: 3rem;
+}

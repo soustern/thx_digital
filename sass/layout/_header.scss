@@ -1,0 +1,44 @@
+/* Positioning */
+/* Display & Box Model */
+/* Other */
+
+.header {
+  /* Display & Box Model */
+  height: 80vh;
+
+  /* Other */
+  background-color: var(--color-black);
+  background-image: url(../img/head_600.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__nav {
+    /* Display & Box Model */
+    display: flex;
+    width: 100%;
+
+    /* Positioning */
+    position: fixed;
+
+    /* Positioning */
+    padding: 2rem 3rem;
+
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+      /* Other */
+      backdrop-filter: blur(10px);
+      background-image: linear-gradient(
+        to bottom,
+        var(--color-black) 10%,
+        transparent
+      );
+    }
+
+    &-logo {
+      /* Display & Box Model */
+      height: 6rem;
+
+      /* Other */
+      filter: brightness(500%);
+    }
+  }
+}

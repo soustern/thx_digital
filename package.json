@@ -1,0 +1,31 @@
+{
+  "name": "thx_digital",
+  "version": "1.0.0",
+  "description": "Website for THX Digital",
+  "main": "index.js",
+  "scripts": {
+    "watch": "node-sass sass/main.scss css/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch",
+    "compile": "node-sass sass/main.scss css/style.comp.css",
+    "prefix": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "compress": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build": "npm-run-all compile prefix compress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soustern/thx_digital.git"
+  },
+  "author": "Rafael Antoniassi Vicechio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soustern/thx_digital/issues"
+  },
+  "homepage": "https://github.com/soustern/thx_digital#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "node-sass": "^8.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.1.0"
+  }
+}
