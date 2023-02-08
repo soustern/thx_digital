@@ -8,9 +8,12 @@
 
   /* Other */
   background-color: var(--color-black);
-  background-image: url(../img/head_600.webp);
-  background-position: center;
+  background-image: radial-gradient(transparent, var(--color-black)),
+    url(../img/header.jpg);
+  background-position: top;
   background-repeat: no-repeat;
+  // background-size: cover;
+  filter: hue(120deg);
 
   &__nav {
     /* Display & Box Model */
