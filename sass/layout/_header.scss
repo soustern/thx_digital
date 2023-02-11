@@ -6,6 +6,9 @@
   /* Display & Box Model */
   height: 90vh;
 
+  /* Positioning */
+  position: relative;
+
   /* Other */
   background-color: var(--color-black);
   background-image: linear-gradient(to bottom, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 0.3) 50%, rgba(#000, 1) 100%), url(../img/header.jpg);
@@ -162,24 +165,33 @@
       }
 
       &-navigation[data-visible] {
-        z-index: 1000;
+        /* Display & Box Model */
         display: flex;
-        flex-direction: column;
-        justify-content: start;
-        position: fixed;
-        top: 0;
-        left: 0;
         height: 100vh;
         width: 100%;
-        background-color: red;
+
+        /* Positioning */
+        flex-direction: column;
+        justify-content: start;
+        left: 0;
         padding: 10rem;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+
+        /* Other */
+        background-color: red;
 
         * {
+          /* Display & Box Model */
           display: block;
+
+          /* Other */
           font-weight: 700;
           font-size: 3.5rem;
 
           &:not(:first-child) {
+            /* Other */
             margin-top: 5rem;
           }
         }
@@ -197,9 +209,14 @@
     ==========================================================================
     */
   }
-}
 
-main {
-  height: 300rem;
-  background-color: #000;
+  &__text {
+    /* Positioning */
+    position: absolute;
+    right: 50%;
+    top: 50%;
+
+    /* Other */
+    text-align: center;
+  }
 }

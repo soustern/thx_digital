@@ -40,6 +40,7 @@
   --font-size-400: 2rem;
   --font-size-700: 3rem; }
 
+/* Colors */
 /* ==========================================================================
    MY RESETS :) - b
    ========================================================================== */
@@ -63,7 +64,7 @@ html {
 */
 body {
   /* Other */
-  color: var(--color-secondary);
+  color: var(--color-secondary-300);
   font-family: "Roboto", sans-serif;
   font-size: var(--font-size-300);
   font-weight: 400;
@@ -144,18 +145,59 @@ select {
 /* ==========================================================================
    ABSTRACTS - b
    ========================================================================== */
+/*
+  ==========================================================================
+  ELEMENT STYLES - b
+  ==========================================================================
+*/
+.default_link_style, .header__nav-list li a:link, .header__nav-list li a:visited {
+  /* Other */
+  text-decoration: none;
+  color: white; }
+
+/*
+  ==========================================================================
+  ELEMENT STYLES - E
+  ==========================================================================
+*/
 /* ==========================================================================
    ABSTRACTS - e
    ========================================================================== */
 /* ==========================================================================
    BASE - b
    ========================================================================== */
+.visually-hidden {
+  visibility: hidden; }
+
 /* ==========================================================================
    BASE - e
    ========================================================================== */
 /* ==========================================================================
    COMPONENTS - b
    ========================================================================== */
+/* Positioning */
+/* Display & Box Model */
+/* Other */
+.btn {
+  /* Positioning */
+  padding: 0.5em 1em;
+  /* Other */
+  background-color: transparent;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  font-size: inherit; }
+  .btn-affluent {
+    /* Other */
+    color: var(--color-secondary-300);
+    background-color: var(--color-affluent-400);
+    transition: all 0.1s; }
+    .btn-affluent:hover {
+      /* Other */
+      background-color: #2472a4; }
+
 /* ==========================================================================
    COMPONENTS - e
    ========================================================================== */
@@ -167,30 +209,150 @@ select {
 /* Other */
 .header {
   /* Display & Box Model */
-  height: 80vh;
+  height: 90vh;
+  /* Positioning */
+  position: relative;
   /* Other */
   background-color: var(--color-black);
-  background-image: url(../img/head_600.webp);
-  background-position: center;
-  background-repeat: no-repeat; }
+  background-image: linear-gradient(to bottom, #0e1b25 0%, rgba(42, 69, 75, 0.3) 50%, black 100%), url(../img/header.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover; }
   .header__nav {
     /* Display & Box Model */
     display: flex;
     width: 100%;
     /* Positioning */
+    align-items: center;
+    gap: 5vw;
+    justify-content: center;
     position: fixed;
     /* Positioning */
-    padding: 2rem 3rem; }
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    /*
+    ==========================================================================
+    MOTION - b
+    ==========================================================================
+    */
+    /*
+    ==========================================================================
+    MOTION - e
+    ==========================================================================
+    */
+    /*
+    ==========================================================================
+    MEDIA QUERIES - b
+    ==========================================================================
+    */
+    /*
+    ==========================================================================
+    MEDIA QUERIES - e
+    ==========================================================================
+    */ }
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
       .header__nav {
         /* Other */
         backdrop-filter: blur(10px);
         background-image: linear-gradient(to bottom, var(--color-black) 10%, transparent); } }
+    .header__nav-toggle {
+      display: none;
+      margin-left: auto; }
+    .header__nav-icon {
+      /* Positioning */
+      margin-top: 4rem;
+      position: relative;
+      z-index: 2000; }
+      .header__nav-icon::before, .header__nav-icon::after {
+        /* Display & Box Model */
+        content: "";
+        /* Positioning */
+        left: 0;
+        position: absolute;
+        transition: all 0.2s; }
+      .header__nav-icon, .header__nav-icon::before, .header__nav-icon::after {
+        /* Display & Box Model */
+        display: inline-block;
+        /* Positioning */
+        height: 2px;
+        width: 3rem;
+        /* Other */
+        background-color: white; }
+      .header__nav-icon::before {
+        /* Display & Box Model */
+        height: 2px;
+        width: 1rem;
+        /* Positioning */
+        top: -1.6rem;
+        left: 100%;
+        translate: -100% 0; }
+      .header__nav-icon::after {
+        /* Display & Box Model */
+        height: 2px;
+        width: 2rem;
+        /* Positioning */
+        top: -0.8rem;
+        left: 100%;
+        translate: -100% 0; }
     .header__nav-logo {
       /* Display & Box Model */
-      height: 6rem;
+      height: 4rem;
       /* Other */
       filter: brightness(500%); }
+    .header__nav-navigation {
+      display: flex;
+      justify-content: center; }
+    .header__nav-list {
+      /* Display & Box Model */
+      display: flex;
+      /* Positioning */
+      gap: 3.5vw;
+      padding-inline-start: 0; }
+      .header__nav-list li {
+        /* Other */
+        list-style: none; }
+    @media only screen and (max-width: 56.25em) {
+      .header__nav {
+        /* Positioning */
+        justify-content: center;
+        gap: 0; }
+        .header__nav-navigation *, .header__nav-talk {
+          /* Display & Box Model */
+          display: none; }
+        .header__nav-navigation[data-visible] {
+          /* Display & Box Model */
+          display: flex;
+          height: 100vh;
+          width: 100%;
+          /* Positioning */
+          flex-direction: column;
+          justify-content: start;
+          left: 0;
+          padding: 10rem;
+          position: fixed;
+          top: 0;
+          z-index: 1000;
+          /* Other */
+          background-color: red; }
+          .header__nav-navigation[data-visible] * {
+            /* Display & Box Model */
+            display: block;
+            /* Other */
+            font-weight: 700;
+            font-size: 3.5rem; }
+            .header__nav-navigation[data-visible] *:not(:first-child) {
+              /* Other */
+              margin-top: 5rem; }
+        .header__nav-toggle {
+          /* Display & Box Model */
+          display: inline-block; } }
+  .header__text {
+    /* Positioning */
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    /* Other */
+    text-align: center; }
 
 /* ==========================================================================
    LAYOUT - e
