@@ -1,0 +1,38 @@
+@keyframes downToUp {
+    0% {
+        transform: translateY(30%); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+@keyframes upToDownFull {
+    0% {
+        transform: translateY(-100%); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+@keyframes leftToRightFull {
+    0% {
+        transform: translateX(-100%); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); 
+    }
+}
+
+@keyframes fullRotation {
+    0% {
+        transform: rotate(0); 
+    }
+    100% {
+        transform: rotate(360deg); 
+    }
+ }

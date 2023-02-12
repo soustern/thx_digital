@@ -1,0 +1,20 @@
+/* Positioning */
+/* Display & Box Model */
+/* Other */
+
+
+.primary-text {
+    /* Other */
+    font-size: 6rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.paragraph {
+    font-weight: 100;
+    line-height: 1.2;
+    
+    &-tiny {
+        font-size: 2.2rem;
+    }
+}

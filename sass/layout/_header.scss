@@ -4,219 +4,207 @@
 
 .header {
   /* Display & Box Model */
-  height: 90vh;
+  display: flex;
+  min-height: 100vh;
 
   /* Positioning */
-  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 15rem 0;
 
   /* Other */
   background-color: var(--color-black);
-  background-image: linear-gradient(to bottom, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 0.3) 50%, rgba(#000, 1) 100%), url(../img/header.jpg);
+  background-image: linear-gradient(to bottom, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, .5) 50%, rgba(#000, 1) 100%), url(../img/header.jpg);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
 
-  &__nav {
+  
+
+  &__text {
     /* Display & Box Model */
-    display: flex;
+    display: flex;  
     width: 100%;
 
     /* Positioning */
     align-items: center;
-    gap: 5vw;
+    gap: 5rem;
     justify-content: center;
-    position: fixed;
+    z-index: 500;
+    padding: 0 8rem;
+        
+    /* Other */
+    flex-wrap: wrap;
 
-    /* Positioning */
-    padding: 1rem 3rem;
-    font-size: 1.5rem;
-
-    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-      /* Other */
-      backdrop-filter: blur(10px);
-      background-image: linear-gradient(to bottom, var(--color-black) 10%, transparent);
-    }
-
-    &-toggle {
-      display: none;
-      margin-left: auto;
-    }
-
-    &-icon {
-      /* Positioning */
-      margin-top: 4rem;
-      position: relative;
-      z-index: 2000;
-
-      &::before,
-      &::after {
-        /* Display & Box Model */
-        content: "";
-
-        /* Positioning */
-        left: 0;
-        position: absolute;
-        transition: all 0.2s;
-      }
-
-      &,
-      &::before,
-      &::after {
-        /* Display & Box Model */
-        display: inline-block;
-
-        /* Positioning */
-        height: 2px;
-        width: 3rem;
-
-        /* Other */
-        background-color: white;
-      }
-
-      &::before {
-        /* Display & Box Model */
-        height: 2px;
-        width: 1rem;
-
-        /* Positioning */
-        top: -1.6rem;
-        left: 100%;
-        translate: -100% 0;
-      }
-
-      &::after {
-        /* Display & Box Model */
-        height: 2px;
-        width: 2rem;
-
-        /* Positioning */
-        top: -0.8rem;
-        left: 100%;
-        translate: -100% 0;
-      }
-    }
-
-    &-logo {
-      /* Display & Box Model */
-      height: 4rem;
-
-      /* Other */
-      filter: brightness(500%);
-    }
-
-    &-navigation {
-      display: flex;
-      justify-content: center;
-    }
-
-    &-list {
+    &-left {
       /* Display & Box Model */
       display: flex;
+      max-width: 50rem;
 
       /* Positioning */
-      gap: 3.5vw;
-      padding-inline-start: 0;
+      align-self: stretch;
+      flex-direction: column;
+      gap: 3rem;
+      justify-content: center;
 
-      li {
+      /*
+      ==========================================================================
+      MOTION - b
+      ==========================================================================
+      */
+
+      h1 {
         /* Other */
-        list-style: none;
+        opacity: 0;
+        animation: downToUp 1s ease-out;
+        animation-fill-mode: forwards;
       }
-      li a {
-        &:link {
-          @extend .default_link_style;
-        }
-        &:visited {
-          @extend .default_link_style;
-        }
-        &:hover {
-        }
-        &:active {
-        }
+
+      p {
+        /* Other */
+        opacity: 0;
+        animation: downToUp 1s ease-out;
+        animation-delay: .5s;
+        animation-fill-mode: forwards;
       }
+
+      div {
+        /* Other */
+        opacity: 0;
+        animation: downToUp 1s ease-out;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+      }
+
+
+      /*
+      ==========================================================================
+      MOTION - e
+      ==========================================================================
+      */
+
+      /*
+      ==========================================================================
+      MEDIA QUERIES - b
+      ==========================================================================
+      */
+
+      @include responsive(tab-land) {
+        /* Positioning */
+        text-align: center;
+      }
+
+      /*
+      ==========================================================================
+      MEDIA QUERIES - e
+      ==========================================================================
+      */
     }
 
-    /*
-    ==========================================================================
-    MOTION - b
-    ==========================================================================
-    */
+    &-btn {
+      button:not(:last-child) {
+         /* Positioning */
+        margin-right: 2rem;
+      }
 
-    /*
-    ==========================================================================
-    MOTION - e
-    ==========================================================================
-    */
+      .hover-span {
+        /* Positioning */
+        margin-right: .5rem;
+        
+        /* Other */
+        transition: all .1s;
+      }
+      
+      button:hover .hover-span {
+        /* Positioning */
+        margin-right: 1rem;
+      }
+    
+      /*
+      ==========================================================================
+      MEDIA QUERIES - b
+      ==========================================================================
+      */
 
-    /*
-    ==========================================================================
-    MEDIA QUERIES - b
-    ==========================================================================
-    */
+      /*
+      * When content gets vertical 
+      * buttons should not appear.
+      *
+      * 61em is the exact width where
+      * content turns vertical.
+      */
 
-    @include responsive(tab-port) {
-      /* Positioning */
-      justify-content: center;
-      gap: 0;
-
-      &-navigation *,
-      &-talk {
+      @media (max-width: 61em) {
         /* Display & Box Model */
         display: none;
       }
 
-      &-navigation[data-visible] {
-        /* Display & Box Model */
-        display: flex;
-        height: 100vh;
-        width: 100%;
-
-        /* Positioning */
-        flex-direction: column;
-        justify-content: start;
-        left: 0;
-        padding: 10rem;
-        position: fixed;
-        top: 0;
-        z-index: 1000;
-
-        /* Other */
-        background-color: red;
-
-        * {
-          /* Display & Box Model */
-          display: block;
-
-          /* Other */
-          font-weight: 700;
-          font-size: 3.5rem;
-
-          &:not(:first-child) {
-            /* Other */
-            margin-top: 5rem;
-          }
-        }
-      }
-
-      &-toggle {
-        /* Display & Box Model */
-        display: inline-block;
-      }
+      /*
+      ==========================================================================
+      MEDIA QUERIES - e
+      ==========================================================================
+      */
     }
 
-    /*
-    ==========================================================================
-    MEDIA QUERIES - e
-    ==========================================================================
-    */
-  }
+    &-right {
+      img {
+        /* Display & Box Model */
+        width: 40rem;
 
-  &__text {
-    /* Positioning */
-    position: absolute;
-    right: 50%;
-    top: 50%;
+        /* Other */
+        opacity: 0;
+        animation: downToUp 1s ease-out 1.5s, fullRotation 8s 2.4s infinite linear;
+        animation-fill-mode: forwards;
 
-    /* Other */
-    text-align: center;
+        border-radius: 500px;
+
+        -webkit-box-shadow:0px 0px 25px 0px rgba(255,255,255,.3);
+        -moz-box-shadow: 0px 0px 25px 0px rgba(255,255,255,.3);
+        box-shadow: 0px 0px 25px 0px rgba(255,255,255,.3);
+
+        /*
+      ==========================================================================
+      MEDIA QUERIES - b
+      ==========================================================================
+      */
+
+      @include responsive(big-desktop) {
+        /* Display & Box Model */
+        width: 50rem;
+
+      }
+
+      /*
+      * When content gets vertical 
+      * buttons should not appear.
+      *
+      * 61em is the exact width where
+      * content turns vertical.
+      *
+      * Animation delay no longer needs
+      * to account for buttons.
+      */
+
+      @media (max-width: 61em) {
+        /* Other */
+        animation: downToUp 1s ease-out 1s, fullRotation 10s 2.4s infinite linear;
+        animation-fill-mode: forwards;
+      }
+
+      /*
+      ==========================================================================
+      MEDIA QUERIES - e
+      ==========================================================================
+      */
+      }
+    }
   }
+}
+
+main {
+  /* Display & Box Model */
+  height: 300rem;
+
+  /* Other */
+  background-color: black;
 }

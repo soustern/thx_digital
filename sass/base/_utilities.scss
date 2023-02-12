@@ -1,3 +1,21 @@
 .visually-hidden {
-  visibility: hidden;
+  visibility: hidden !important;
+}
+
+.text-bold {
+  font-weight: 700 !important;
+}
+
+.glow {
+  &-little {
+    -webkit-text-shadow:0px 0px 25px  rgba($color-affluent-400,1);
+    -moz-text-shadow: 0px 0px 25px  rgba($color-affluent-400,1);
+    text-shadow: 0px 0px 25px  rgba($color-affluent-400,1);
+  }
+}
+
+.color {
+  &-affluent-400 {
+    color: var(--color-affluent-400);
+  }
 }

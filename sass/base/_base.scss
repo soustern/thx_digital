@@ -4,15 +4,22 @@
 
 html {
   /* Other */
-  font-size: 62.5%; // Set 1rem = 10px
+  font-size: 55%; 
 
   /* Medias Queries - b
    ========================================================================== */
+
+   @include responsive(big-desktop) {
+    /* Other */
+    font-size: 62.5%; // Set 1rem = 8px
+  }
 
   @include responsive(phone) {
     /* Other */
     font-size: 50%; // Set 1rem = 8px
   }
+
+
 
   /* Medias Queries - e
    ========================================================================== */
