@@ -6,6 +6,10 @@
   /* Positioning */
   padding: 0.5em 1em;
 
+  @include responsive(tab-port) {
+    padding: 1em 1.5em;
+  }
+
   /* Other */
   background-color: transparent;
   border-radius: 5px;
@@ -22,23 +26,33 @@
     color: var(--color-secondary-300);
     transition: all 0.1s;
 
-
     &:hover {
       /* Other */
       background-color: darken($color-affluent-400, 5%);
     }
   }
 
-  &-alt {
+  &-alt-300 {
     /* Other */
-    border: .1rem solid var(--color-secondary-300);
+    border: 0.1rem solid rgba($color-secondary-300, 0.1);
     color: var(--color-secondary-300);
-    transition: all .2s;
+    transition: all 0.2s;
 
     &:hover {
-      -webkit-box-shadow:0px 0px 15px  rgba($color-secondary-300, .5);
-      -moz-box-shadow: 0px 0px 15px  rgba($color-secondary-300, .5);
-      box-shadow: 0px 0px 15px  rgba($color-secondary-300, .5);    
+      background-color: rgba($color: $color-secondary-400, $alpha: 0.1);
+    }
+  }
+
+  &-alt-400 {
+    /* Other */
+    border: 0.1rem solid var(--color-secondary-300);
+    color: var(--color-secondary-300);
+    transition: all 0.2s;
+
+    &:hover {
+      -webkit-box-shadow: 0px 0px 15px rgba($color-secondary-300, 0.5);
+      -moz-box-shadow: 0px 0px 15px rgba($color-secondary-300, 0.5);
+      box-shadow: 0px 0px 15px rgba($color-secondary-300, 0.5);
     }
   }
 }

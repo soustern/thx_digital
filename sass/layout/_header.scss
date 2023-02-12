@@ -9,21 +9,27 @@
 
   /* Positioning */
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   padding: 15rem 0;
+  gap: 8rem;
 
   /* Other */
   background-color: var(--color-black);
-  background-image: linear-gradient(to bottom, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, .5) 50%, rgba(#000, 1) 100%), url(../img/header.jpg);
+  background-image: linear-gradient(
+      to bottom,
+      hsla(205, 46%, 10%, 1) 0%,
+      hsla(191, 28%, 23%, 0.5) 50%,
+      rgba(#000, 1) 100%
+    ),
+    url(../img/header.jpg);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
 
-  
-
   &__text {
     /* Display & Box Model */
-    display: flex;  
+    display: flex;
     width: 100%;
 
     /* Positioning */
@@ -32,7 +38,7 @@
     justify-content: center;
     z-index: 500;
     padding: 0 8rem;
-        
+
     /* Other */
     flex-wrap: wrap;
 
@@ -64,7 +70,7 @@
         /* Other */
         opacity: 0;
         animation: downToUp 1s ease-out;
-        animation-delay: .5s;
+        animation-delay: 0.5s;
         animation-fill-mode: forwards;
       }
 
@@ -75,7 +81,6 @@
         animation-delay: 1s;
         animation-fill-mode: forwards;
       }
-
 
       /*
       ==========================================================================
@@ -103,23 +108,23 @@
 
     &-btn {
       button:not(:last-child) {
-         /* Positioning */
+        /* Positioning */
         margin-right: 2rem;
       }
 
       .hover-span {
         /* Positioning */
-        margin-right: .5rem;
-        
+        margin-right: 0.5rem;
+
         /* Other */
-        transition: all .1s;
+        transition: all 0.1s;
       }
-      
+
       button:hover .hover-span {
         /* Positioning */
         margin-right: 1rem;
       }
-    
+
       /*
       ==========================================================================
       MEDIA QUERIES - b
@@ -153,14 +158,10 @@
 
         /* Other */
         opacity: 0;
-        animation: downToUp 1s ease-out 1.5s, fullRotation 8s 2.4s infinite linear;
+        animation: downToUp 1s ease-out 1.5s, glow 5s 1.5s infinite;
         animation-fill-mode: forwards;
 
         border-radius: 500px;
-
-        -webkit-box-shadow:0px 0px 25px 0px rgba(255,255,255,.3);
-        -moz-box-shadow: 0px 0px 25px 0px rgba(255,255,255,.3);
-        box-shadow: 0px 0px 25px 0px rgba(255,255,255,.3);
 
         /*
       ==========================================================================
@@ -168,13 +169,12 @@
       ==========================================================================
       */
 
-      @include responsive(big-desktop) {
-        /* Display & Box Model */
-        width: 50rem;
+        @include responsive(big-desktop) {
+          /* Display & Box Model */
+          width: 50rem;
+        }
 
-      }
-
-      /*
+        /*
       * When content gets vertical 
       * buttons should not appear.
       *
@@ -185,13 +185,13 @@
       * to account for buttons.
       */
 
-      @media (max-width: 61em) {
-        /* Other */
-        animation: downToUp 1s ease-out 1s, fullRotation 10s 2.4s infinite linear;
-        animation-fill-mode: forwards;
-      }
+        @media (max-width: 61em) {
+          /* Other */
+          animation: downToUp 1s ease-out 1s, glow 5s 1s infinite;
+          animation-fill-mode: forwards;
+        }
 
-      /*
+        /*
       ==========================================================================
       MEDIA QUERIES - e
       ==========================================================================
@@ -199,12 +199,20 @@
       }
     }
   }
-}
 
-main {
-  /* Display & Box Model */
-  height: 300rem;
+  &__arrow {
+    /* Other */
+    animation: fadeIn 0.5s ease-in 1.5s forwards;
+    color: var(--color-secondary-300);
+    font-size: 2rem;
+    opacity: 0;
 
-  /* Other */
-  background-color: black;
+    button > * {
+      /* Display & Box Model */
+      display: block;
+
+      /* Other */
+      animation: bounceY 1.5s infinite;
+    }
+  }
 }

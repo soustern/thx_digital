@@ -58,7 +58,7 @@ html {
   @media only screen and (max-width: 37.5em) {
     html {
       /* Other */
-      font-size: 50%; } }
+      font-size: 45%; } }
 
 /*
 * Add custom default typography.
@@ -179,6 +179,9 @@ select {
   font-size: 6rem;
   font-weight: 400;
   line-height: 1.2; }
+  @media only screen and (max-width: 37.5em) {
+    .primary-text {
+      font-size: 5rem; } }
 
 .paragraph {
   font-weight: 100;
@@ -199,6 +202,12 @@ select {
 
 .color-affluent-400 {
   color: var(--color-affluent-400); }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 @keyframes downToUp {
   0% {
@@ -221,11 +230,27 @@ select {
     opacity: 1;
     transform: translateX(0); } }
 
-@keyframes fullRotation {
+@keyframes glow {
   0% {
-    transform: rotate(0); }
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.3);
+    -moz-box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.3); }
+  50% {
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.3);
+    -moz-box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 50px 5px rgba(255, 255, 255, 0.3); }
   100% {
-    transform: rotate(360deg); } }
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.3);
+    -moz-box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.3); } }
+
+@keyframes bounceY {
+  0% {
+    transform: translateY(-10%); }
+  50% {
+    transform: translateY(10%); }
+  100% {
+    transform: translateY(-10%); } }
 
 /* ==========================================================================
    BASE - e
@@ -248,6 +273,9 @@ select {
   text-decoration: none;
   font-size: inherit;
   font-weight: 700; }
+  @media only screen and (max-width: 56.25em) {
+    .btn {
+      padding: 1em 1.5em; } }
   .btn-affluent {
     /* Other */
     background-color: var(--color-affluent-400);
@@ -256,12 +284,19 @@ select {
     .btn-affluent:hover {
       /* Other */
       background-color: #2472a4; }
-  .btn-alt {
+  .btn-alt-300 {
+    /* Other */
+    border: 0.1rem solid rgba(236, 240, 241, 0.1);
+    color: var(--color-secondary-300);
+    transition: all 0.2s; }
+    .btn-alt-300:hover {
+      background-color: rgba(223, 230, 233, 0.1); }
+  .btn-alt-400 {
     /* Other */
     border: 0.1rem solid var(--color-secondary-300);
     color: var(--color-secondary-300);
-    transition: all .2s; }
-    .btn-alt:hover {
+    transition: all 0.2s; }
+    .btn-alt-400:hover {
       -webkit-box-shadow: 0px 0px 15px rgba(236, 240, 241, 0.5);
       -moz-box-shadow: 0px 0px 15px rgba(236, 240, 241, 0.5);
       box-shadow: 0px 0px 15px rgba(236, 240, 241, 0.5); }
@@ -281,8 +316,10 @@ select {
   min-height: 100vh;
   /* Positioning */
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   padding: 15rem 0;
+  gap: 8rem;
   /* Other */
   background-color: var(--color-black);
   background-image: linear-gradient(to bottom, #0e1b25 0%, rgba(42, 69, 75, 0.5) 50%, black 100%), url(../img/header.jpg);
@@ -339,7 +376,7 @@ select {
         /* Other */
         opacity: 0;
         animation: downToUp 1s ease-out;
-        animation-delay: .5s;
+        animation-delay: 0.5s;
         animation-fill-mode: forwards; }
       .header__text-left div {
         /* Other */
@@ -374,9 +411,9 @@ select {
         margin-right: 2rem; }
       .header__text-btn .hover-span {
         /* Positioning */
-        margin-right: .5rem;
+        margin-right: 0.5rem;
         /* Other */
-        transition: all .1s; }
+        transition: all 0.1s; }
       .header__text-btn button:hover .hover-span {
         /* Positioning */
         margin-right: 1rem; }
@@ -389,12 +426,9 @@ select {
       width: 40rem;
       /* Other */
       opacity: 0;
-      animation: downToUp 1s ease-out 1.5s, fullRotation 8s 2.4s infinite linear;
+      animation: downToUp 1s ease-out 1.5s, glow 5s 1.5s infinite;
       animation-fill-mode: forwards;
       border-radius: 500px;
-      -webkit-box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.3);
-      -moz-box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.3);
-      box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.3);
       /*
       ==========================================================================
       MEDIA QUERIES - b
@@ -422,14 +456,19 @@ select {
       @media (max-width: 61em) {
         .header__text-right img {
           /* Other */
-          animation: downToUp 1s ease-out 1s, fullRotation 10s 2.4s infinite linear;
+          animation: downToUp 1s ease-out 1s, glow 5s 1s infinite;
           animation-fill-mode: forwards; } }
-
-main {
-  /* Display & Box Model */
-  height: 300rem;
-  /* Other */
-  background-color: black; }
+  .header__arrow {
+    /* Other */
+    animation: fadeIn 0.5s ease-in 1.5s forwards;
+    color: var(--color-secondary-300);
+    font-size: 2rem;
+    opacity: 0; }
+    .header__arrow button > * {
+      /* Display & Box Model */
+      display: block;
+      /* Other */
+      animation: bounceY 1.5s infinite; }
 
 .navigation {
   /* Display & Box Model */
