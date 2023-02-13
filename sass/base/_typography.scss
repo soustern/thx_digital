@@ -13,6 +13,17 @@
   }
 }
 
+.secondary-text {
+  /* Other */
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+
+  @include responsive(phone) {
+    font-size: 2rem;
+  }
+}
+
 .paragraph {
   font-weight: 100;
   line-height: 1.2;

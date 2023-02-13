@@ -1,0 +1,95 @@
+/* Positioning */
+/* Display & Box Model */
+/* Other */
+
+.modern-card {
+  --card-color: rgb(14, 14, 14);
+
+  /* Display & Box Model */
+  width: 30rem;
+  height: 30rem;
+
+  /* Positioning */
+  position: relative;
+
+  /* Other */
+  background-color: rgba($color-secondary-300, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    /* Display & Box Model */
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    /* Positioning */
+    left: 0;
+    position: absolute;
+    top: 0;
+
+    /* Other */
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 500ms;
+  }
+
+  &::before {
+    /* Positioning */
+    z-index: 3;
+
+    /* Other */
+    background: radial-gradient(
+      800px circle at var(--mouse-x) var(--mouse-y),
+      rgba($color-secondary-300, 0.06),
+      transparent 40%
+    );
+  }
+
+  &::after {
+    /* Positioning */
+    z-index: 1;
+
+    /* Other */
+    background: radial-gradient(
+      400px circle at var(--mouse-x) var(--mouse-y),
+      rgba($color-secondary-300, 0.3),
+      transparent 40%
+    );
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &__content {
+    /* Display & Box Model */
+    display: flex;
+
+    /* Positioning */
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    inset: 1px;
+    justify-content: center;
+    padding: 2rem;
+    position: absolute;
+    z-index: 2;
+
+    /* Other */
+    background-color: var(--card-color);
+    border-radius: inherit;
+
+    svg {
+      /* Display & Box Model */
+      display: inline-block;
+      height: 8rem;
+      width: 8rem;
+
+      /* Other */
+      fill: var(--color-primary-300);
+    }
+  }
+}

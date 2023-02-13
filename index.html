@@ -45,6 +45,7 @@
     SCRIPTS - b
     */ -->
     <script src="js/navigation.js"></script>
+    <script src="js/modern-card.js"></script>
     <!-- /*
     SCRIPTS - e
     */ -->
@@ -122,15 +123,90 @@
         </picture>
       </div>
       <div class="header__arrow">
-        <button class="btn btn-alt-300"><span>&#129131;</span></button>
+        <button
+          onclick="document.getElementById('services').scrollIntoView();"
+          class="btn btn-alt-300"
+        >
+          <span>&#129131;</span>
+        </button>
       </div>
     </header>
-
-    <main></main>
 
     <!-- /*
     ==========================================================================
     HEADER - e
+    ==========================================================================
+    */ -->
+
+    <!-- /*
+    ==========================================================================
+    MAIN - b
+    ==========================================================================
+    */ -->
+
+    <main>
+      <section id="services" class="services">
+        <h2 class="services__header secondary-text">
+          A sua marca saindo do ponto
+          <span class="color-affluent-400 text-bold">A</span> e chegando ao
+          ponto <span class="color-affluent-400 text-bold">B</span>!
+        </h2>
+        <div id="card" class="services__list">
+          <div class="modern-card">
+            <div class="modern-card__content">
+              <svg>
+                <use xlink:href="img/sprites.svg#icon-target"></use>
+              </svg>
+              <h3>Estratégia</h3>
+              <p class="paragraph">
+                Estratégias e planejamento minunciosos são os principais pilares
+                do nosso trabalho.
+              </p>
+            </div>
+          </div>
+          <div class="modern-card">
+            <div class="modern-card__content">
+              <svg>
+                <use xlink:href="img/sprites.svg#icon-mobile"></use>
+              </svg>
+              <h3>Mídias digitais</h3>
+              <p class="paragraph">
+                Utilização e aproveitamento máximo de todas as principais mídias
+                digitais e suas vantagens.
+              </p>
+            </div>
+          </div>
+          <div class="modern-card">
+            <div class="modern-card__content">
+              <svg>
+                <use xlink:href="img/sprites.svg#icon-pencil"></use>
+              </svg>
+              <h3>Conteúdos criativos</h3>
+              <p class="paragraph">
+                Criatividade em conjunto a métodos para produzir o conteúdo mais
+                adequado.
+              </p>
+            </div>
+          </div>
+          <div class="modern-card">
+            <div class="modern-card__content">
+              <svg>
+                <use xlink:href="img/sprites.svg#icon-linegraph"></use>
+              </svg>
+              <h3>Tecnologia aplicada</h3>
+              <p class="paragraph">
+                Utilização das últimas tecnologias, ferramentas e técnicas nos
+                processos dia a dia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- /*
+    ==========================================================================
+    MAIN - e
     ==========================================================================
     */ -->
   </body>
