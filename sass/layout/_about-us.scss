@@ -1,0 +1,50 @@
+/* Display & Box Model */
+/* Positioning */
+/* Other */
+
+.about-us {
+  /* Positioning */
+
+  /* Other */
+  background-color: var(--color-primary-700);
+
+  &__content {
+    /* Display & Box Model */
+    display: flex;
+
+    /* Positioning */
+    padding: var(--padding-section);
+    justify-content: space-between;
+    gap: 10rem;
+
+    /* Other */
+    clip-path: polygon(0% 40%, 100% 0%, 100% 100%, 0% 100%);
+    // background-color: var(--color-secondary-300);
+    background-color: red;
+  }
+
+  &__image {
+    /* Display & Box Model */
+    /* Positioning */
+    /* Other */
+  }
+
+  &__text {
+    /* Display & Box Model */
+    display: flex;
+    max-width: calc();
+
+    /* Positioning */
+    flex-direction: column;
+
+    /* Other */
+  }
+
+  &__heading {
+    /* Display & Box Model */
+    /* Positioning */
+
+    /* Other */
+    color: var(--color-primary-700);
+  }
+}
