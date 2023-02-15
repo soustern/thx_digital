@@ -38,9 +38,12 @@
   /* Sizes */
   --font-size-300: 1.6rem;
   --font-size-400: 2rem;
-  --font-size-700: 3rem; }
+  --font-size-700: 3rem;
+  /* Positioning */
+  --padding-section: 5rem; }
 
 /* Colors */
+/* Positioning */
 /* ==========================================================================
    MY RESETS :) - b
    ========================================================================== */
@@ -204,6 +207,9 @@ select {
 
 .text-bold {
   font-weight: 700 !important; }
+
+.text-black {
+  font-weight: 900 !important; }
 
 .text-light {
   font-weight: 100 !important; }
@@ -551,7 +557,7 @@ select {
 /* Other */
 .services {
   /* Positioning */
-  padding: 5rem;
+  padding: var(--padding-section);
   text-align: center;
   position: relative;
   /* Other */
@@ -804,6 +810,40 @@ select {
       .navigation__toggle {
         /* Display & Box Model */
         display: inline-block; } }
+
+/* Display & Box Model */
+/* Positioning */
+/* Other */
+.about-us {
+  /* Positioning */
+  /* Other */
+  background-color: var(--color-primary-700); }
+  .about-us__content {
+    /* Display & Box Model */
+    display: flex;
+    /* Positioning */
+    padding: var(--padding-section);
+    justify-content: space-between;
+    gap: 10rem;
+    /* Other */
+    clip-path: polygon(0% 40%, 100% 0%, 100% 100%, 0% 100%);
+    background-color: red; }
+  .about-us__image {
+    /* Display & Box Model */
+    /* Positioning */
+    /* Other */ }
+  .about-us__text {
+    /* Display & Box Model */
+    display: flex;
+    max-width: calc();
+    /* Positioning */
+    flex-direction: column;
+    /* Other */ }
+  .about-us__heading {
+    /* Display & Box Model */
+    /* Positioning */
+    /* Other */
+    color: var(--color-primary-700); }
 
 /* ==========================================================================
    LAYOUT - e
