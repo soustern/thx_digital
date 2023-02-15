@@ -98,6 +98,10 @@
     ==========================================================================
     */
 
+    @include responsive(phone) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
     @include responsive(tab-port) {
       /* Display & Box Model */
       grid-template-columns: repeat(2, 1fr);

@@ -628,6 +628,9 @@ select {
     */ }
     .services__list:hover > *::after {
       opacity: 1; }
+    @media only screen and (max-width: 37.5em) {
+      .services__list {
+        grid-template-columns: repeat(1, 1fr); } }
     @media only screen and (max-width: 56.25em) {
       .services__list {
         /* Display & Box Model */
