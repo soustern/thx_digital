@@ -15,7 +15,7 @@
 
     /* Positioning */
     justify-content: center;
-    padding: 20rem 0;
+    padding: 15rem 0;
     position: relative;
     gap: 10rem;
     z-index: 2;
@@ -24,7 +24,7 @@
     background-image: url("../img/about-us-alt.jpg");
     background-size: cover;
 
-    background-color: var(--color-primary-700);
+    background-color: lighten($color-primary-700, 5%);
     background-blend-mode: soft-light;
     overflow: visible;
 
@@ -42,7 +42,28 @@
 
       /* Other */
       background-color: var(--color-primary-700);
-      clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+    }
+
+    &::after {
+      /* Display & Box Model */
+      content: "";
+      display: block;
+      height: 20rem;
+      width: 100%;
+
+      /* Positioning */
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      /* Other */
+      background: linear-gradient(
+        178deg,
+        transparent 40%,
+        rgba($color-primary-400, 0.2)
+      );
+      clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
     }
 
     /*
@@ -147,6 +168,7 @@
     max-width: 50rem;
 
     /* Positioning */
+    margin-top: 10rem;
 
     /* Other */
   }

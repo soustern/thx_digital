@@ -9,7 +9,7 @@
   justify-content: center;
   padding: var(--padding-section);
   z-index: 0;
-  gap: 5rem;
+  gap: 3rem;
 
   /* Other */
   flex-wrap: wrap;
@@ -28,12 +28,12 @@
     */
 
     background-image: linear-gradient(
-        rgba($color-primary-400, 0.3) 1px,
+        rgba($color-primary-400, 0.45) 0.3px,
         transparent 1px
       ),
       linear-gradient(
         to right,
-        rgba($color-primary-400, 0.3) 1px,
+        rgba($color-primary-400, 0.45) 0.3px,
         var(--color-primary-700) 1px
       );
     background-size: 100px 100px;

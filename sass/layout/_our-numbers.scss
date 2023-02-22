@@ -9,9 +9,10 @@
 
   /* Positioning */
   align-self: stretch;
-  padding: 3rem;
+  padding: 2rem;
   flex-direction: column;
   justify-content: space-around;
+  gap: 3rem;
 
   position: relative;
   z-index: 3;
@@ -20,13 +21,13 @@
   background-image: linear-gradient(
       to bottom,
       transparent 70%,
-      rgba($color-black, 0.7)
+      rgba($color-black, 0.8)
     ),
     url(../img/our-numbers-alt.jpg);
   background-size: cover;
 
   background-color: var(--color-primary-400);
-  background-blend-mode: overlay;
+  background-blend-mode: soft-light;
 
   color: var(--color-secondary-300);
   border-radius: 10px;
@@ -43,7 +44,7 @@
     inset: 0;
     z-index: 4;
 
-    backdrop-filter: saturate(70%);
+    backdrop-filter: saturate(90%);
   }
 
   &__text {
