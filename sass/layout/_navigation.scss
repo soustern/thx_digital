@@ -121,7 +121,7 @@
         transform: scaleX(0);
 
         /* Other */
-        background-color: currentColor;
+        background-color: var(--color-affluent-400);
         transition: all 0.3s;
       }
 
@@ -132,7 +132,7 @@
         */
 
       &:hover:after {
-        transform: scaleX(0.3);
+        transform: scaleX(1);
       }
 
       /*

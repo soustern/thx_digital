@@ -6,7 +6,7 @@
   /* Positioning */
   padding: 0.5em 1em;
 
-  @include responsive(tab-port) {
+  @include responsive(tab-land) {
     padding: 1em 1.5em;
   }
 

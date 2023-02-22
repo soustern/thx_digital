@@ -4,6 +4,7 @@
 
 .about-us {
   /* Positioning */
+  z-index: 0;
 
   /* Other */
   background-color: var(--color-primary-700);
@@ -13,29 +14,139 @@
     display: flex;
 
     /* Positioning */
-    padding: var(--padding-section);
-    justify-content: space-between;
+    justify-content: center;
+    padding: 20rem 0;
+    position: relative;
     gap: 10rem;
+    z-index: 2;
 
     /* Other */
-    clip-path: polygon(0% 40%, 100% 0%, 100% 100%, 0% 100%);
-    // background-color: var(--color-secondary-300);
-    background-color: red;
+    background-image: url("../img/about-us-alt.jpg");
+    background-size: cover;
+
+    background-color: var(--color-primary-700);
+    background-blend-mode: soft-light;
+    overflow: visible;
+
+    &::before {
+      /* Display & Box Model */
+      content: "";
+      display: block;
+      height: 20rem;
+      width: 100%;
+
+      /* Positioning */
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      /* Other */
+      background-color: var(--color-primary-700);
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+    }
+
+    /*
+    ==========================================================================
+    MEDIA QUERIES - b
+    ==========================================================================
+    */
+
+    @include responsive(tab-land) {
+      /* Display & Box Model */
+
+      /* Positioning */
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+
+      /* Other */
+      text-align: center;
+    }
+
+    /*
+    ==========================================================================
+    MEDIA QUERIES - e
+    ==========================================================================
+    */
+  }
+
+  &__left {
+    /* Display & Box Model */
+    width: 60rem;
+
+    /* Positioning */
+    position: relative;
+    z-index: 3;
+
+    /* Other */
+    @include clearfix;
+
+    /*
+    ==========================================================================
+    MEDIA QUERIES - b
+    ==========================================================================
+    */
+
+    @include responsive(tab-land) {
+      /* Display & Box Model */
+      height: 1rem;
+
+      /* Positioning */
+      margin-bottom: 30rem;
+
+      /* Other */
+    }
+
+    /*
+    ==========================================================================
+    MEDIA QUERIES - e
+    ==========================================================================
+    */
   }
 
   &__image {
     /* Display & Box Model */
+    width: 100%;
+
     /* Positioning */
+    position: absolute;
+    z-index: 3;
+
+    left: 0;
+    top: 0;
+
+    transform: translateY(-25%);
+
     /* Other */
+    filter: drop-shadow(0px 0px 20px $color-black);
+
+    /*
+    ==========================================================================
+    MEDIA QUERIES - b
+    ==========================================================================
+    */
+
+    @include responsive(tab-land) {
+      /* Display & Box Model */
+
+      /* Positioning */
+
+      /* Other */
+      transform: translateY(-50%);
+    }
+
+    /*
+    ==========================================================================
+    MEDIA QUERIES - e
+    ==========================================================================
+    */
   }
 
-  &__text {
+  &__right {
     /* Display & Box Model */
-    display: flex;
-    max-width: calc();
+    max-width: 50rem;
 
     /* Positioning */
-    flex-direction: column;
 
     /* Other */
   }
@@ -45,6 +156,6 @@
     /* Positioning */
 
     /* Other */
-    color: var(--color-primary-700);
+    color: var(--color-affluent-400);
   }
 }

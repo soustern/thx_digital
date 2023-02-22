@@ -1,0 +1,65 @@
+/* Display & Box Model */
+/* Positioning */
+/* Other */
+
+.our-numbers {
+  /* Display & Box Model */
+  display: flex;
+  min-width: 40rem;
+
+  /* Positioning */
+  align-self: stretch;
+  padding: 3rem;
+  flex-direction: column;
+  justify-content: space-around;
+
+  position: relative;
+  z-index: 3;
+
+  /* Other */
+  background-image: linear-gradient(
+      to bottom,
+      transparent 70%,
+      rgba($color-black, 0.7)
+    ),
+    url(../img/our-numbers-alt.jpg);
+  background-size: cover;
+
+  background-color: var(--color-primary-400);
+  background-blend-mode: overlay;
+
+  color: var(--color-secondary-300);
+  border-radius: 10px;
+
+  &::before {
+    /* Display & Box Model */
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    /* Positioning */
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+
+    backdrop-filter: saturate(70%);
+  }
+
+  &__text {
+    /* Positioning */
+    z-index: 5;
+  }
+
+  & p {
+    /* Other */
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  &__text:last-child {
+    p {
+      color: var(--color-affluent-400);
+    }
+  }
+}

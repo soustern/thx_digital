@@ -17,6 +17,24 @@
   border-radius: 10px;
   cursor: pointer;
 
+  /*
+    ==========================================================================
+    MEDIA QUERIES - b
+    ==========================================================================
+    */
+
+  @include responsive(big-desktop) {
+    /* Display & Box Model */
+    width: 35rem;
+    height: 35rem;
+  }
+
+  /*
+    ==========================================================================
+    MEDIA QUERIES - e
+    ==========================================================================
+  */
+
   &::before,
   &::after {
     /* Display & Box Model */
@@ -43,7 +61,7 @@
     /* Other */
     background: radial-gradient(
       800px circle at var(--mouse-x) var(--mouse-y),
-      rgba($color-secondary-300, 0.06),
+      rgba($color-primary-300, 0.06),
       transparent 40%
     );
   }
@@ -55,7 +73,7 @@
     /* Other */
     background: radial-gradient(
       400px circle at var(--mouse-x) var(--mouse-y),
-      rgba($color-secondary-300, 0.3),
+      rgba($color-primary-300, 0.3),
       transparent 40%
     );
   }
@@ -89,7 +107,25 @@
       width: 8rem;
 
       /* Other */
-      fill: var(--color-primary-300);
+      fill: var(--color-secondary-400);
+
+      /*
+    ==========================================================================
+    MEDIA QUERIES - b
+    ==========================================================================
+    */
+
+      @include responsive(big-desktop) {
+        /* Display & Box Model */
+        height: 10rem;
+        width: 10rem;
+      }
+
+      /*
+    ==========================================================================
+    MEDIA QUERIES - e
+    ==========================================================================
+  */
     }
   }
 }

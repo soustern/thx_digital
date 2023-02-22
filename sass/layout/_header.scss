@@ -45,7 +45,7 @@
     &-left {
       /* Display & Box Model */
       display: flex;
-      max-width: 50rem;
+      max-width: 47rem;
 
       /* Positioning */
       align-self: stretch;
@@ -62,23 +62,23 @@
       h1 {
         /* Other */
         opacity: 0;
-        animation: downToUp 1s ease-out;
+        animation: downToUp 0.5s ease-out;
         animation-fill-mode: forwards;
       }
 
       p {
         /* Other */
         opacity: 0;
-        animation: downToUp 1s ease-out;
-        animation-delay: 0.5s;
+        animation: downToUp 0.5s ease-out;
+        animation-delay: 0.25s;
         animation-fill-mode: forwards;
       }
 
       div {
         /* Other */
         opacity: 0;
-        animation: downToUp 1s ease-out;
-        animation-delay: 1s;
+        animation: downToUp 0.5s ease-out;
+        animation-delay: 0.75s;
         animation-fill-mode: forwards;
       }
 
@@ -158,7 +158,7 @@
 
         /* Other */
         opacity: 0;
-        animation: downToUp 1s ease-out 1.5s, glow 5s 1.5s infinite;
+        animation: downToUp 1s ease-out 1s, glow 5s 1s infinite;
         animation-fill-mode: forwards;
 
         border-radius: 500px;
