@@ -424,6 +424,10 @@ select {
     .modern-card {
       /* Display & Box Model */
       padding: 20rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .modern-card {
+      /* Display & Box Model */
+      padding: 20rem; } }
   .modern-card::before, .modern-card::after {
     /* Display & Box Model */
     content: "";

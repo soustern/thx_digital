@@ -29,6 +29,11 @@
     padding: 20rem;
   }
 
+  @include responsive(phone) {
+    /* Display & Box Model */
+    padding: 20rem;
+  }
+
   /*
     ==========================================================================
     MEDIA QUERIES - e
