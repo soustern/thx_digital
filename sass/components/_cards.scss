@@ -1,5 +1,5 @@
-/* Positioning */
 /* Display & Box Model */
+/* Positioning */
 /* Other */
 
 .modern-card {
@@ -83,10 +83,6 @@
     );
   }
 
-  &:hover::before {
-    opacity: 1;
-  }
-
   &__content {
     /* Display & Box Model */
     display: flex;
@@ -119,16 +115,55 @@
       fill: var(--color-secondary-400);
 
       /*
+      * Maximize top left icon.
+      */
+
+      &:first-child {
+        /* Display & Box Model */
+        display: inline;
+        height: 2.5rem;
+        width: 2.5rem;
+
+        /* Positioning */
+        inset: 1rem;
+        position: absolute;
+
+        /* Other */
+        opacity: 0;
+        transition: opacity 0.15s;
+      }
+    }
+  }
+
+  /*
     ==========================================================================
-    MEDIA QUERIES - b
+    MOTION - b
     ==========================================================================
     */
 
-      /*
-    ==========================================================================
-    MEDIA QUERIES - e
-    ==========================================================================
+  /*
+  * Radial gradient background selector.
+  *
+  * When card is hovered, the gradient appears.
   */
-    }
+
+  &:hover::before {
+    opacity: 1;
   }
+
+  /*
+  * Maximize icon hover.
+  *
+  * When card is hovered, the icon appears.
+  */
+
+  &:hover &__content svg:first-child {
+    opacity: 0.5;
+  }
+
+  /*
+      ==========================================================================
+      MOTION - e
+      ==========================================================================
+    */
 }

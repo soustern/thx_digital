@@ -33,6 +33,9 @@ html {
 */
 
 body {
+  /* Positioning */
+  z-index: 500;
+
   /* Other */
   color: var(--color-secondary-300);
   font-family: "Roboto", sans-serif;

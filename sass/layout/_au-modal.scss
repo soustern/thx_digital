@@ -1,0 +1,22 @@
+/* Display & Box Model */
+/* Positioning */
+/* Other */
+
+.au-modal {
+  /* Display & Box Model */
+  height: 100vh;
+  width: 100%;
+
+  /* Positioning */
+  position: fixed;
+  z-index: 1000;
+
+  /* Other */
+  background-color: transparent;
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    /* Other */
+    webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+  }
+}
