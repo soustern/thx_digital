@@ -57,6 +57,8 @@
     border-radius: inherit;
     opacity: 0;
     transition: opacity 500ms;
+
+    pointer-events: all;
   }
 
   &::before {
@@ -78,7 +80,7 @@
     /* Other */
     background: radial-gradient(
       400px circle at var(--mouse-x) var(--mouse-y),
-      rgba($color-primary-300, 0.3),
+      rgba($color-primary-300, 0.4),
       transparent 40%
     );
   }

@@ -4,10 +4,13 @@
 
 .au-modal {
   /* Display & Box Model */
+  display: none;
   height: 100vh;
   width: 100%;
 
   /* Positioning */
+  align-items: center;
+  justify-content: center;
   position: fixed;
   z-index: 1000;
 
@@ -18,5 +21,61 @@
     /* Other */
     webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
+  }
+
+  &__content {
+    /* Display & Box Model */
+    height: 50%;
+    width: 50%;
+
+    /* Positioning */
+    position: relative;
+
+    /* Other */
+    background-image: url("../img/au-modal_strategy.jpg");
+    background-position: left bottom;
+    background-size: cover;
+    border-radius: 10px;
+    isolation: isolate;
+
+    overflow: hidden;
+
+    border: 0.2rem solid rgba($color-secondary-300, 0.15);
+
+    // Make it so image does not appear behind border
+    background-clip: padding-box;
+
+    &::before,
+    &::after {
+      /* Positioning */
+
+      /* Display & Box Model */
+      content: "";
+      display: block;
+      height: 100%;
+    }
+
+    &::before {
+      /* Positioning */
+
+      /* Other */
+      backdrop-filter: blur(15px);
+      clip-path: polygon(0 40%, 100% 40%, 100% 100%, 0 100%);
+    }
+
+    &::after {
+      /* Display & Box Model */
+      width: 100%;
+
+      /* Positioning */
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      /* Other */
+      background-color: $color-primary-700;
+      clip-path: polygon(0 40%, 100% 40%, 100% 100%, 0 100%);
+      opacity: 0.9;
+    }
   }
 }

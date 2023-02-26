@@ -463,7 +463,8 @@ select {
     /* Other */
     border-radius: inherit;
     opacity: 0;
-    transition: opacity 500ms; }
+    transition: opacity 500ms;
+    pointer-events: all; }
   .modern-card::before {
     /* Positioning */
     z-index: 3;
@@ -473,7 +474,7 @@ select {
     /* Positioning */
     z-index: 1;
     /* Other */
-    background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(125, 95, 255, 0.3), transparent 40%); }
+    background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(125, 95, 255, 0.4), transparent 40%); }
   .modern-card__content {
     /* Display & Box Model */
     display: flex;
@@ -1112,9 +1113,12 @@ select {
 /* Other */
 .au-modal {
   /* Display & Box Model */
+  display: none;
   height: 100vh;
   width: 100%;
   /* Positioning */
+  align-items: center;
+  justify-content: center;
   position: fixed;
   z-index: 1000;
   /* Other */
@@ -1124,6 +1128,43 @@ select {
       /* Other */
       webkit-backdrop-filter: blur(15px);
       backdrop-filter: blur(15px); } }
+  .au-modal__content {
+    /* Display & Box Model */
+    height: 50%;
+    width: 50%;
+    /* Positioning */
+    position: relative;
+    /* Other */
+    background-image: url("../img/au-modal_strategy.jpg");
+    background-position: left bottom;
+    background-size: cover;
+    border-radius: 10px;
+    isolation: isolate;
+    overflow: hidden;
+    border: 0.2rem solid rgba(236, 240, 241, 0.15);
+    background-clip: padding-box; }
+    .au-modal__content::before, .au-modal__content::after {
+      /* Positioning */
+      /* Display & Box Model */
+      content: "";
+      display: block;
+      height: 100%; }
+    .au-modal__content::before {
+      /* Positioning */
+      /* Other */
+      backdrop-filter: blur(15px);
+      clip-path: polygon(0 40%, 100% 40%, 100% 100%, 0 100%); }
+    .au-modal__content::after {
+      /* Display & Box Model */
+      width: 100%;
+      /* Positioning */
+      position: absolute;
+      left: 0;
+      top: 0;
+      /* Other */
+      background-color: #0b090a;
+      clip-path: polygon(0 40%, 100% 40%, 100% 100%, 0 100%);
+      opacity: 0.9; }
 
 /* ==========================================================================
    LAYOUT - e
