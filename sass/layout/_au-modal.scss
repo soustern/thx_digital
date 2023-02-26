@@ -25,29 +25,64 @@
 
   &__content {
     /* Display & Box Model */
-    height: 50%;
-    width: 50%;
+    max-width: 40rem;
 
     /* Positioning */
     position: relative;
+    padding: 2rem;
 
-    /* Other */
-    background-image: url("../img/au-modal_strategy.jpg");
-    background-position: left bottom;
-    background-size: cover;
     border-radius: 10px;
-    isolation: isolate;
 
     overflow: hidden;
 
-    border: 0.2rem solid rgba($color-secondary-300, 0.15);
+    border: 0.1rem solid rgba($color-secondary-300, 0.15);
 
     // Make it so image does not appear behind border
     background-clip: padding-box;
 
+    box-shadow: 0px 0px 20px rgba($color-primary-700, 0.85);
+
+    &--strategy {
+      /* Other */
+      background-image: linear-gradient(
+          to bottom,
+          rgba($color-primary-400, 0.85) 1%,
+          transparent
+        ),
+        url("../img/au-modal_strategy.jpg");
+      background-position: left bottom;
+      background-size: cover;
+    }
+
+    &--media {
+      /* Other */
+      background-image: linear-gradient(
+          to bottom,
+          rgba($color-primary-400, 0.85) 1%,
+          transparent
+        ),
+        url("../img/au-modal_media.jpg");
+      background-position: left bottom;
+      background-size: cover;
+    }
+
+    &--creative {
+      /* Other */
+      background-image: linear-gradient(
+          to bottom,
+          rgba($color-primary-400, 0.85) 1%,
+          transparent
+        ),
+        url("../img/au-modal_creative.jpg");
+      background-position: left bottom;
+      background-size: cover;
+    }
+
     &::before,
     &::after {
       /* Positioning */
+      position: absolute;
+      inset: 0;
 
       /* Display & Box Model */
       content: "";
@@ -60,7 +95,6 @@
 
       /* Other */
       backdrop-filter: blur(15px);
-      clip-path: polygon(0 40%, 100% 40%, 100% 100%, 0 100%);
     }
 
     &::after {
@@ -74,8 +108,117 @@
 
       /* Other */
       background-color: $color-primary-700;
-      clip-path: polygon(0 40%, 100% 40%, 100% 100%, 0 100%);
-      opacity: 0.9;
+      opacity: 0.5;
+    }
+  }
+
+  &__close {
+    /* Display & Box Model */
+    display: flex;
+
+    /* Positioning */
+    position: relative;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 3000;
+
+    /* Other */
+    font-size: 1rem;
+
+    svg {
+      /* Display & Box Model */
+      height: 5rem;
+      width: 5rem;
+
+      /* Positioning */
+
+      /* Other */
+      fill: var(--color-secondary-300);
+    }
+  }
+
+  &__header {
+    /* Display & Box Model */
+    display: flex;
+
+    /* Positioning */
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    position: relative;
+    z-index: 3000;
+
+    /* Other */
+    border-bottom: 1px solid rgba($color-secondary-300, 0.15);
+    font-size: 5rem;
+  }
+
+  &__text {
+    /* Display & Box Model */
+
+    /* Positioning */
+    margin-top: 2rem;
+    position: relative;
+    z-index: 3000;
+
+    /* Other */
+
+    & hr {
+      /* Display & Box Model */
+      /* Positioning */
+      /* Other */
+      opacity: 0.15;
+    }
+
+    & > * {
+      /* Display & Box Model */
+      /* Positioning */
+      margin: 2rem 0;
+
+      /* Other */
+    }
+
+    & ul > * {
+      /* Display & Box Model */
+      display: flex;
+      /* Positioning */
+      margin: 1rem 0;
+
+      /* Other */
+
+      svg {
+        /* Display & Box Model */
+        height: 2rem;
+        width: 2rem;
+
+        /* Positioning */
+        margin-right: 1rem;
+
+        /* Other */
+        fill: var(--color-secondary-300);
+      }
+    }
+  }
+
+  &__cta {
+    /* Display & Box Model */
+
+    /* Positioning */
+    margin-top: 2rem;
+    position: relative;
+    z-index: 3000;
+
+    /* Other */
+
+    & button {
+      /* Display & Box Model */
+
+      width: 100%;
+
+      /* Positioning */
+      /* Other */
     }
   }
 }

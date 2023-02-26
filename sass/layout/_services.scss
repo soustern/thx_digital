@@ -28,11 +28,10 @@
 
   &__list {
     /* Display & Box Model */
-    display: inline-grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
 
     /* Positioning */
-    grid-gap: 3rem;
+    gap: 2rem;
 
     /*
     * Make it so this goes in front of
