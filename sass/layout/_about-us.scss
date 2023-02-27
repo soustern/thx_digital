@@ -3,68 +3,49 @@
 /* Other */
 
 .about-us {
-  /* Positioning */
-  z-index: 0;
+  /* Display & Box Model */
+  display: flex;
 
-  /* Other */
-  background-color: var(--color-primary-700);
+  /* Positioning */
+  position: relative;
+  justify-content: center;
+  z-index: 1000;
+
+  &::before {
+    /* Display & Box Model */
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    /* Positioning */
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    /* Other */
+    opacity: 0.8;
+    background-image: radial-gradient(transparent, $color-black 60%),
+      url("../img/about-us-alt.jpg");
+    background-size: cover;
+    background-position: bottom;
+  }
 
   &__content {
     /* Display & Box Model */
-    display: flex;
+    display: grid;
+    max-width: var(--default-section-size);
+    grid-template-columns: repeat(2, 1fr);
 
     /* Positioning */
-    justify-content: center;
-    padding: 15rem 0;
+    grid-gap: 5rem;
     position: relative;
-    gap: 10rem;
-    z-index: 2;
 
     /* Other */
-    background-image: url("../img/about-us-alt.jpg");
-    background-size: cover;
-
-    background-color: lighten($color-primary-700, 5%);
-    background-blend-mode: soft-light;
-    overflow: visible;
-
-    &::before {
-      /* Display & Box Model */
-      content: "";
-      display: block;
-      height: 20rem;
-      width: 100%;
-
-      /* Positioning */
-      position: absolute;
-      left: 0;
-      top: 0;
-
-      /* Other */
-      background-color: var(--color-primary-700);
-      clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
-    }
-
-    &::after {
-      /* Display & Box Model */
-      content: "";
-      display: block;
-      height: 20rem;
-      width: 100%;
-
-      /* Positioning */
-      position: absolute;
-      left: 0;
-      top: 0;
-
-      /* Other */
-      background: linear-gradient(
-        178deg,
-        transparent 40%,
-        rgba($color-primary-400, 0.2)
-      );
-      clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
-    }
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 
     /*
     ==========================================================================
@@ -74,14 +55,13 @@
 
     @include responsive(tab-land) {
       /* Display & Box Model */
+      grid-template-columns: repeat(1, 1fr);
 
       /* Positioning */
-      align-items: center;
       flex-direction: column;
       justify-content: space-between;
 
       /* Other */
-      text-align: center;
     }
 
     /*
@@ -93,14 +73,12 @@
 
   &__left {
     /* Display & Box Model */
-    width: 60rem;
+    display: flex;
 
     /* Positioning */
-    position: relative;
-    z-index: 3;
+    justify-content: center;
 
     /* Other */
-    @include clearfix;
 
     /*
     ==========================================================================
@@ -110,10 +88,8 @@
 
     @include responsive(tab-land) {
       /* Display & Box Model */
-      height: 1rem;
 
       /* Positioning */
-      margin-bottom: 30rem;
 
       /* Other */
     }
@@ -127,19 +103,11 @@
 
   &__image {
     /* Display & Box Model */
-    width: 100%;
 
     /* Positioning */
-    position: absolute;
-    z-index: 3;
-
-    left: 0;
-    top: 0;
-
-    transform: translateY(-25%);
 
     /* Other */
-    filter: drop-shadow(0px 0px 20px $color-black);
+    filter: drop-shadow(0px 0px 20px rgba($color-black, 0.5));
 
     /*
     ==========================================================================
@@ -153,7 +121,6 @@
       /* Positioning */
 
       /* Other */
-      transform: translateY(-50%);
     }
 
     /*
@@ -165,10 +132,11 @@
 
   &__right {
     /* Display & Box Model */
-    max-width: 50rem;
+    display: flex;
 
     /* Positioning */
-    margin-top: 10rem;
+    flex-direction: column;
+    justify-content: center;
 
     /* Other */
   }
@@ -178,6 +146,6 @@
     /* Positioning */
 
     /* Other */
-    color: var(--color-affluent-400);
+    color: var(--color-secondary-400);
   }
 }

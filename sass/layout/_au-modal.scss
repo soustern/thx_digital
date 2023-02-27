@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
   position: fixed;
-  z-index: 1000;
+  z-index: 10000;
 
   /* Other */
   background-color: transparent;
@@ -35,7 +35,9 @@
 
     overflow: hidden;
 
-    border: 0.1rem solid rgba($color-secondary-300, 0.15);
+    border: $default-border-style;
+
+    background-clip: padding-box;
 
     // Make it so image does not appear behind border
     background-clip: padding-box;
@@ -46,7 +48,7 @@
       /* Other */
       background-image: linear-gradient(
           to bottom,
-          rgba($color-primary-400, 0.85) 1%,
+          rgba($color-primary-700, 0.85) 1%,
           transparent
         ),
         url("../img/au-modal_strategy.jpg");
@@ -58,7 +60,7 @@
       /* Other */
       background-image: linear-gradient(
           to bottom,
-          rgba($color-primary-400, 0.85) 1%,
+          rgba($color-primary-700, 0.85) 1%,
           transparent
         ),
         url("../img/au-modal_media.jpg");
@@ -70,10 +72,22 @@
       /* Other */
       background-image: linear-gradient(
           to bottom,
-          rgba($color-primary-400, 0.85) 1%,
+          rgba($color-primary-700, 0.85) 1%,
           transparent
         ),
         url("../img/au-modal_creative.jpg");
+      background-position: left bottom;
+      background-size: cover;
+    }
+
+    &--inovation {
+      /* Other */
+      background-image: linear-gradient(
+          to bottom,
+          rgba($color-primary-700, 0.85) 1%,
+          transparent
+        ),
+        url("../img/au-modal_innovation.jpg");
       background-position: left bottom;
       background-size: cover;
     }
@@ -108,7 +122,7 @@
 
       /* Other */
       background-color: $color-primary-700;
-      opacity: 0.5;
+      opacity: 0.6;
     }
   }
 

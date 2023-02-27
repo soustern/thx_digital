@@ -5,46 +5,25 @@
 .our-numbers {
   /* Display & Box Model */
   display: flex;
-  min-width: 40rem;
+  max-width: var(--default-section-size);
 
   /* Positioning */
   flex-wrap: wrap;
-  gap: 26rem;
-  padding: 5rem 5rem;
-
-  position: relative;
-  z-index: 5;
+  justify-content: space-around;
+  margin-inline: auto;
+  padding: 5rem;
+  z-index: 1000;
 
   /* Other */
-  background-image: linear-gradient(
-      to bottom,
-      transparent 70%,
-      rgba($color-black, 0.8)
-    ),
-    url(../img/our-numbers-alt.jpg);
+  background-image: url(../img/our-numbers-alt.jpg);
   background-size: cover;
   background-position: center;
 
-  background-color: var(--color-primary-400);
-  background-blend-mode: soft-light;
+  background-color: darken($color-primary-300, 10%);
+  background-blend-mode: overlay;
 
   color: var(--color-secondary-300);
-  border-radius: 10px;
-
-  &::before {
-    /* Display & Box Model */
-    content: "";
-    display: block;
-    height: 100%;
-    width: 100%;
-
-    /* Positioning */
-    position: absolute;
-    inset: 0;
-    z-index: 4;
-
-    backdrop-filter: saturate(90%);
-  }
+  border-radius: var(--default-border-radius);
 
   &__right,
   &__left {

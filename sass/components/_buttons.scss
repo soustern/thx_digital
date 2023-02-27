@@ -22,13 +22,21 @@
 
   &-affluent {
     /* Other */
-    background-color: var(--color-affluent-400);
+    background: linear-gradient(
+      to bottom,
+      var(--color-affluent-400),
+      var(--color-primary-400)
+    );
     color: var(--color-secondary-300);
     transition: all 0.1s;
 
     &:hover {
       /* Other */
-      background-color: darken($color-affluent-400, 5%);
+      background: linear-gradient(
+        to bottom,
+        darken($color-affluent-400, 5%),
+        darken($color-primary-400, 5%)
+      );
     }
   }
 

@@ -1,3 +1,7 @@
+/* Display & Box Model */
+/* Positioning */
+/* Other */
+
 /* ==========================================================================
    MY RESETS :) - b
    ========================================================================== */
@@ -6,8 +10,26 @@ html {
   /* Other */
   font-size: 55%;
   scroll-padding-top: 20rem;
-  background-color: var(--color-primary-700);
+  background-color: var(--color-black);
 
+  main {
+    /* Display & Box Model */
+
+    /* Positioning */
+    position: relative;
+    padding: var(--padding-section);
+
+    /* Other */
+  }
+
+  main > hr {
+    /* Display & Box Model */
+    max-width: 50rem;
+
+    /* Other */
+    border-radius: 100px;
+    opacity: 0.15;
+  }
   /* Medias Queries - b
    ========================================================================== */
 
@@ -86,7 +108,7 @@ ol[role="list"] {
 }
 
 /* Set core root defaults */
-html:focus-within {
+html {
   scroll-behavior: smooth;
 }
 

@@ -68,7 +68,7 @@
     /* Other */
     background: radial-gradient(
       800px circle at var(--mouse-x) var(--mouse-y),
-      rgba($color-primary-300, 0.06),
+      rgba($color-secondary-300, 0.06),
       transparent 40%
     );
   }
@@ -80,7 +80,7 @@
     /* Other */
     background: radial-gradient(
       400px circle at var(--mouse-x) var(--mouse-y),
-      rgba($color-primary-300, 0.45),
+      rgba($color-secondary-300, 0.4),
       transparent 40%
     );
   }
@@ -90,7 +90,6 @@
     display: flex;
 
     /* Positioning */
-    align-items: center;
     flex-direction: column;
     gap: 2rem;
     inset: 1px;
@@ -115,6 +114,7 @@
 
       /* Other */
       fill: var(--color-secondary-400);
+      transition: all 0.2s;
 
       /*
       * Maximize top left icon.
@@ -127,7 +127,7 @@
         width: 2.5rem;
 
         /* Positioning */
-        inset: 1rem;
+        inset: 1rem 1rem auto auto;
         position: absolute;
 
         /* Other */

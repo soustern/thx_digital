@@ -3,9 +3,11 @@
 /* Other */
 
 .services {
+  /* Display & Box Model */
+  max-width: var(--default-section-size);
+
   /* Positioning */
-  text-align: center;
-  position: relative;
+  margin-inline: auto;
 
   h2 {
     /* Positioning */
@@ -28,10 +30,11 @@
 
   &__list {
     /* Display & Box Model */
-    display: flex;
+    display: grid;
 
     /* Positioning */
-    gap: 2rem;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
 
     /*
     * Make it so this goes in front of
