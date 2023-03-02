@@ -59,7 +59,7 @@ body {
   z-index: 500;
 
   /* Other */
-  color: var(--color-secondary-300);
+  color: var(--color-secondary-400);
   font-family: "Roboto", sans-serif;
   font-size: var(--font-size-300);
   font-weight: 400;
@@ -100,10 +100,15 @@ dd {
 ul[role="list"],
 ol[role="list"] {
   list-style: none;
+  -webkit-margin-before: 0em;
   margin-block-start: 0em;
+  -webkit-margin-after: 0em;
   margin-block-end: 0em;
+  -webkit-margin-start: 0px;
   margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
   margin-inline-end: 0px;
+  -webkit-padding-start: 0px;
   padding-inline-start: 0px;
 }
 
@@ -121,6 +126,7 @@ body {
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
+  -webkit-text-decoration-skip: ink;
   text-decoration-skip-ink: auto;
 }
 
@@ -148,7 +154,9 @@ select {
   *,
   *::before,
   *::after {
+    -webkit-animation-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;

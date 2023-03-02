@@ -29,6 +29,7 @@
     "postcss-cli": "^10.1.0"
   },
   "dependencies": {
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "package.json": "^2.0.1"
   }
 }

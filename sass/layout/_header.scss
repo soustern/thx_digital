@@ -45,12 +45,12 @@
     &-left {
       /* Display & Box Model */
       display: flex;
-      max-width: 47rem;
+      max-width: 50rem;
 
       /* Positioning */
       align-self: stretch;
       flex-direction: column;
-      gap: 3rem;
+      gap: 2rem;
       justify-content: center;
 
       /*
@@ -62,23 +62,31 @@
       h1 {
         /* Other */
         opacity: 0;
+        -webkit-animation: downToUp 0.5s ease-out;
         animation: downToUp 0.5s ease-out;
+        -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
       }
 
       p {
         /* Other */
         opacity: 0;
+        -webkit-animation: downToUp 0.5s ease-out;
         animation: downToUp 0.5s ease-out;
+        -webkit-animation-delay: 0.25s;
         animation-delay: 0.25s;
+        -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
       }
 
       div {
         /* Other */
         opacity: 0;
+        -webkit-animation: downToUp 0.5s ease-out;
         animation: downToUp 0.5s ease-out;
+        -webkit-animation-delay: 0.75s;
         animation-delay: 0.75s;
+        -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
       }
 
@@ -154,11 +162,13 @@
     &-right {
       img {
         /* Display & Box Model */
-        width: 40rem;
+        width: 35rem;
 
         /* Other */
         opacity: 0;
+        -webkit-animation: downToUp 1s ease-out 1s, glow 5s 1s infinite;
         animation: downToUp 1s ease-out 1s, glow 5s 1s infinite;
+        -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
 
         border-radius: 500px;
@@ -168,11 +178,6 @@
       MEDIA QUERIES - b
       ==========================================================================
       */
-
-        @include responsive(big-desktop) {
-          /* Display & Box Model */
-          width: 50rem;
-        }
 
         /*
       * When content gets vertical 
@@ -187,7 +192,9 @@
 
         @media (max-width: 61em) {
           /* Other */
+          -webkit-animation: downToUp 1s ease-out 1s, glow 5s 1s infinite;
           animation: downToUp 1s ease-out 1s, glow 5s 1s infinite;
+          -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
         }
 
@@ -202,6 +209,7 @@
 
   &__arrow {
     /* Other */
+    -webkit-animation: fadeIn 0.5s ease-in 1.5s forwards;
     animation: fadeIn 0.5s ease-in 1.5s forwards;
     color: var(--color-secondary-300);
     font-size: 2rem;
@@ -212,6 +220,7 @@
       display: block;
 
       /* Other */
+      -webkit-animation: bounceY 1.5s infinite;
       animation: bounceY 1.5s infinite;
     }
   }

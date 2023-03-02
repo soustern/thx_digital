@@ -1,0 +1,17 @@
+/* Display & Box Model */
+/* Positioning */
+/* Other */
+
+.our-numbers {
+  /* Display & Box Model */
+  max-width: var(--default-section-size);
+
+  /* Positioning */
+  margin: 0 auto;
+
+  /* Other */
+
+  &:hover > *::after {
+    opacity: 1;
+  }
+}
