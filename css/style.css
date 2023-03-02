@@ -1568,7 +1568,7 @@ select {
   /* Display & Box Model */
   max-width: var(--default-section-size);
   /* Positioning */
-  margin: 0 auto;
+  margin: 12rem auto;
   /* Other */ }
   .our-numbers:hover > *::after {
     opacity: 1; }
