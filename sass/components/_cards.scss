@@ -299,8 +299,8 @@
     display: flex;
 
     /* Positioning */
-    justify-content: space-between;
     position: relative;
+    justify-content: space-between;
     gap: 3rem;
 
     padding: var(--padding-cards);
@@ -346,7 +346,6 @@
     position: relative;
 
     /* Other */
-    background-color: red;
     border-radius: var(--default-border-radius);
     overflow: hidden;
     -webkit-filter: grayscale(35%);
@@ -358,6 +357,12 @@
       /* Positioning */
       /* Other */
     }
+
+    /*
+    ==========================================================================
+    PSEUDO - b
+    ==========================================================================
+    */
 
     &::after {
       /* Display & Box Model */
@@ -374,6 +379,60 @@
       background-color: var(--color-primary-700);
       opacity: 0.2;
     }
+
+    /*
+    ==========================================================================
+    PSEUDO - e
+    ==========================================================================
+    */
+
+    /*
+    ==========================================================================
+    MEDIA CARRY - b
+    ==========================================================================
+    */
+
+    @include responsive(tab-port) {
+      max-width: 30rem;
+      min-height: 100%;
+
+      img {
+        transform: scale(5);
+      }
+    }
+
+    /*
+    ==========================================================================
+    MEDIA CARRY - e
+    ==========================================================================
+    */
+  }
+
+  &__container {
+    /* Display & Box Model */
+    display: flex;
+
+    /* Positioning */
+    gap: 3rem;
+    z-index: 3;
+
+    /* Other */
+
+    /*
+    ==========================================================================
+    MEDIA CARRY - b
+    ==========================================================================
+    */
+
+    @include responsive(tab-port) {
+      flex-direction: column;
+    }
+
+    /*
+    ==========================================================================
+    MEDIA CARRY - e
+    ==========================================================================
+    */
   }
 
   &__body {
@@ -382,8 +441,33 @@
 
     /* Positioning */
     flex-direction: column;
-    z-index: 3;
     justify-content: space-between;
+
+    /* Other */
+
+    /*
+    ==========================================================================
+    MEDIA CARRY - b
+    ==========================================================================
+    */
+
+    @include responsive(tab-port) {
+      gap: 3rem;
+    }
+
+    /*
+    ==========================================================================
+    MEDIA CARRY - e
+    ==========================================================================
+    */
+  }
+
+  &__item {
+    /* Display & Box Model */
+    display: flex;
+
+    /* Positioning */
+    gap: 0.5rem;
 
     /* Other */
   }
@@ -414,46 +498,17 @@
     /* Display & Box Model */
 
     /* Positioning */
-    align-self: flex-end;
 
-    &--maximize {
+    svg {
       /* Display & Box Model */
+      height: 3rem;
+      width: 3rem;
 
       /* Positioning */
-      inset: 1rem;
-      position: absolute;
+      margin-top: 0.5rem;
 
       /* Other */
-      fill: var(--color-secondary-300);
-      transition: opacity 0.15s;
-      opacity: 0;
-
-      svg {
-        /* Display & Box Model */
-        height: 2.5rem;
-        width: 2.5rem;
-      }
-    }
-
-    &--arrow {
-      /* Display & Box Model */
-      display: flex;
-
-      /* Positioning */
-      justify-content: center;
-      align-items: center;
-      padding: 0.5rem;
-
-      /* Other */
-      fill: var(--color-secondary-300);
-      background-color: rgba($color-secondary-300, 0.1);
-      border-radius: 200px;
-
-      svg {
-        /* Display & Box Model */
-        height: 4rem;
-        width: 4rem;
-      }
+      fill: var(--color-primary-400);
     }
   }
 

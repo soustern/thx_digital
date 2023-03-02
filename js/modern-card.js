@@ -1,6 +1,6 @@
 window.onload = function () {
   document.getElementById("numbers").onmousemove = (e) => {
-    for (const card of document.getElementsByClassName("modern-card")) {
+    for (const card of document.getElementsByClassName("modern-card--alt")) {
       const rect = card.getBoundingClientRect(),
         x = e.clientX - rect.left,
         y = e.clientY - rect.top;
@@ -10,7 +10,7 @@ window.onload = function () {
     }
   };
 
-  document.getElementById("services").onmousemove = (e) => {
+  document.getElementById("card").onmousemove = (e) => {
     for (const card of document.getElementsByClassName("modern-card")) {
       const rect = card.getBoundingClientRect(),
         x = e.clientX - rect.left,

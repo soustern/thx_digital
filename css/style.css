@@ -683,8 +683,8 @@ select {
     width: 100%;
     display: flex;
     /* Positioning */
-    justify-content: space-between;
     position: relative;
+    justify-content: space-between;
     gap: 3rem;
     padding: var(--padding-cards);
     /* Other */
@@ -718,11 +718,30 @@ select {
     z-index: 3;
     position: relative;
     /* Other */
-    background-color: red;
     border-radius: var(--default-border-radius);
     overflow: hidden;
     -webkit-filter: grayscale(35%);
-    filter: grayscale(35%); }
+    filter: grayscale(35%);
+    /*
+    ==========================================================================
+    PSEUDO - b
+    ==========================================================================
+    */
+    /*
+    ==========================================================================
+    PSEUDO - e
+    ==========================================================================
+    */
+    /*
+    ==========================================================================
+    MEDIA CARRY - b
+    ==========================================================================
+    */
+    /*
+    ==========================================================================
+    MEDIA CARRY - e
+    ==========================================================================
+    */ }
     .modern-card--alt__image img {
       /* Display & Box Model */
       /* Positioning */
@@ -739,13 +758,57 @@ select {
       /* Other */
       background-color: var(--color-primary-700);
       opacity: 0.2; }
+    @media only screen and (max-width: 56.25em) {
+      .modern-card--alt__image {
+        max-width: 30rem;
+        min-height: 100%; }
+        .modern-card--alt__image img {
+          transform: scale(5); } }
+  .modern-card--alt__container {
+    /* Display & Box Model */
+    display: flex;
+    /* Positioning */
+    gap: 3rem;
+    z-index: 3;
+    /* Other */
+    /*
+    ==========================================================================
+    MEDIA CARRY - b
+    ==========================================================================
+    */
+    /*
+    ==========================================================================
+    MEDIA CARRY - e
+    ==========================================================================
+    */ }
+    @media only screen and (max-width: 56.25em) {
+      .modern-card--alt__container {
+        flex-direction: column; } }
   .modern-card--alt__body {
     /* Display & Box Model */
     display: flex;
     /* Positioning */
     flex-direction: column;
-    z-index: 3;
     justify-content: space-between;
+    /* Other */
+    /*
+    ==========================================================================
+    MEDIA CARRY - b
+    ==========================================================================
+    */
+    /*
+    ==========================================================================
+    MEDIA CARRY - e
+    ==========================================================================
+    */ }
+    @media only screen and (max-width: 56.25em) {
+      .modern-card--alt__body {
+        gap: 3rem; } }
+  .modern-card--alt__item {
+    /* Display & Box Model */
+    display: flex;
+    /* Positioning */
+    gap: 0.5rem;
     /* Other */ }
   .modern-card--alt__text {
     /* Display & Box Model */
@@ -763,36 +826,15 @@ select {
       font-size: 1.8rem; }
   .modern-card--alt__icons {
     /* Display & Box Model */
-    /* Positioning */
-    align-self: flex-end; }
-    .modern-card--alt__icons--maximize {
+    /* Positioning */ }
+    .modern-card--alt__icons svg {
       /* Display & Box Model */
+      height: 3rem;
+      width: 3rem;
       /* Positioning */
-      inset: 1rem;
-      position: absolute;
+      margin-top: 0.5rem;
       /* Other */
-      fill: var(--color-secondary-300);
-      transition: opacity 0.15s;
-      opacity: 0; }
-      .modern-card--alt__icons--maximize svg {
-        /* Display & Box Model */
-        height: 2.5rem;
-        width: 2.5rem; }
-    .modern-card--alt__icons--arrow {
-      /* Display & Box Model */
-      display: flex;
-      /* Positioning */
-      justify-content: center;
-      align-items: center;
-      padding: 0.5rem;
-      /* Other */
-      fill: var(--color-secondary-300);
-      background-color: rgba(236, 240, 241, 0.1);
-      border-radius: 200px; }
-      .modern-card--alt__icons--arrow svg {
-        /* Display & Box Model */
-        height: 4rem;
-        width: 4rem; }
+      fill: var(--color-primary-400); }
   .modern-card--alt::before, .modern-card--alt::after {
     /* Display & Box Model */
     content: "";
@@ -1309,8 +1351,6 @@ select {
         /* Display & Box Model */
         grid-template-columns: repeat(1, 1fr);
         /* Positioning */
-        flex-direction: column;
-        justify-content: space-between;
         /* Other */ } }
   .about-us__left {
     /* Display & Box Model */
@@ -1332,6 +1372,7 @@ select {
       .about-us__left {
         /* Display & Box Model */
         /* Positioning */
+        grid-row: 2;
         /* Other */ } }
   .about-us__image {
     /* Display & Box Model */

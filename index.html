@@ -365,7 +365,7 @@
       </div>
       <div class="header__arrow">
         <button
-          onclick="document.getElementById('services').scrollIntoView();"
+          onclick="document.getElementById('about-us').scrollIntoView();"
           class="btn btn-alt-300"
         >
           <span>&#129131;</span>
@@ -386,7 +386,7 @@
     */ -->
 
     <main>
-      <section class="about-us |">
+      <section id="about-us" class="about-us | mb-900">
         <div class="about-us__content">
           <div class="about-us__left">
             <figure class="about-us__image">
@@ -413,9 +413,9 @@
         </div>
       </section>
 
-      <hr class="" />
+      <hr class="| mb-900" />
 
-      <section id="services" class="our-numbers">
+      <section id="numbers" class="our-numbers | mb-900">
         <div class="text-container | mb-300">
           <div class="text-container__content">
             <h2
@@ -441,47 +441,93 @@
                 <img src="img/our-numbers-alt.jpg" alt="" />
               </div>
             </div>
-            <div class="modern-card--alt__body">
-              <div class="modern-card--alt__text">
-                <h3 class="modern-card--alt__text--heading">05</h3>
-                <p class="modern-card--alt__text--paragraph">
-                  Anos de história
-                </p>
+            <div class="modern-card--alt__container">
+              <div class="modern-card--alt__body">
+                <div class="modern-card--alt__item">
+                  <div class="modern-card--alt__icons">
+                    <svg>
+                      <use xlink:href="img/sprites-alt.svg#icon-calendar"></use>
+                    </svg>
+                  </div>
+                  <div class="modern-card--alt__text">
+                    <h3 class="modern-card--alt__text--heading">05</h3>
+                    <p class="modern-card--alt__text--paragraph">
+                      Anos de história
+                    </p>
+                  </div>
+                </div>
+                <div class="modern-card--alt__item">
+                  <div class="modern-card--alt__icons">
+                    <svg>
+                      <use xlink:href="img/sprites-alt.svg#icon-share-2"></use>
+                    </svg>
+                  </div>
+                  <div class="modern-card--alt__text">
+                    <h3 class="modern-card--alt__text--heading">15</h3>
+                    <p class="modern-card--alt__text--paragraph">Segmentos</p>
+                  </div>
+                </div>
+                <div class="modern-card--alt__item">
+                  <div class="modern-card--alt__icons">
+                    <svg>
+                      <use xlink:href="img/sprites-alt.svg#icon-aperture"></use>
+                    </svg>
+                  </div>
+                  <div class="modern-card--alt__text">
+                    <h3 class="modern-card--alt__text--heading">150</h3>
+                    <p class="modern-card--alt__text--paragraph">
+                      Marcas atendidas
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div class="modern-card--alt__text">
-                <h3 class="modern-card--alt__text--heading">15</h3>
-                <p class="modern-card--alt__text--paragraph">Segmentos</p>
-              </div>
-              <div class="modern-card--alt__text">
-                <h3 class="modern-card--alt__text--heading">150</h3>
-                <p class="modern-card--alt__text--paragraph">
-                  Marcas atendidas
-                </p>
-              </div>
-            </div>
-            <div class="modern-card--alt__body">
-              <div class="modern-card--alt__text">
-                <h3 class="modern-card--alt__text--heading">500 mil</h3>
-                <p class="modern-card--alt__text--paragraph">
-                  Valor investido em anúncios
-                </p>
-              </div>
-              <div class="modern-card--alt__text">
-                <h3 class="modern-card--alt__text--heading">05</h3>
-                <p class="modern-card--alt__text--paragraph">Regiões</p>
-              </div>
-              <div class="modern-card--alt__text">
-                <h3 class="modern-card--alt__text--heading">01 objetivo</h3>
-                <p class="modern-card--alt__text--paragraph">
-                  Conquistar bons resultados
-                </p>
+              <div class="modern-card--alt__body">
+                <div class="modern-card--alt__item">
+                  <div class="modern-card--alt__icons">
+                    <svg>
+                      <use
+                        xlink:href="img/sprites-alt.svg#icon-dollar-sign"
+                      ></use>
+                    </svg>
+                  </div>
+                  <div class="modern-card--alt__text">
+                    <h3 class="modern-card--alt__text--heading">500 mil</h3>
+                    <p class="modern-card--alt__text--paragraph">
+                      Valor investido em anúncios
+                    </p>
+                  </div>
+                </div>
+                <div class="modern-card--alt__item">
+                  <div class="modern-card--alt__icons">
+                    <svg>
+                      <use xlink:href="img/sprites-alt.svg#icon-globe"></use>
+                    </svg>
+                  </div>
+                  <div class="modern-card--alt__text">
+                    <h3 class="modern-card--alt__text--heading">05</h3>
+                    <p class="modern-card--alt__text--paragraph">Regiões</p>
+                  </div>
+                </div>
+                <div class="modern-card--alt__item">
+                  <div class="modern-card--alt__icons">
+                    <svg>
+                      <use xlink:href="img/sprites-alt.svg#icon-target"></use>
+                    </svg>
+                  </div>
+                  <div class="modern-card--alt__text">
+                    <h3 class="modern-card--alt__text--heading">01 objetivo</h3>
+                    <p class="modern-card--alt__text--paragraph">
+                      Conquistar bons resultados
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <hr class="" />
+      <hr class="| mb-900" />
 
       <div class="text-container | mb-300">
         <div class="text-container__content">
@@ -491,8 +537,8 @@
             Serviços
           </h2>
           <p class="paragraph">
-            Nosso tempo é o bem mais valioso que temos. Nós cuidamos do
-            marketing para você poder cuidar do seu negócio.
+            A empresa de marketing digital que transformará a sua marca, gerando
+            ótimos resultados em menos tempo, de maneira simples e natural.
           </p>
         </div>
       </div>
